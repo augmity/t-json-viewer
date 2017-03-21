@@ -10,15 +10,15 @@ interface Item {
 }
 
 @Component({
-  selector: 't-json-viewer',
-  templateUrl: './t-json-viewer.component.html',
-  styleUrls: ['./t-json-viewer.component.css'],
+  selector: 'agm-json-viewer',
+  templateUrl: './agm-json-viewer.component.html',
+  styleUrls: ['./agm-json-viewer.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class TJsonViewerComponent implements OnInit {
+export class AgmJsonViewerComponent implements OnInit {
 
-  @Input()
-  json: Array<any>|Object|any;
+  @Input() json: Array<any>|Object|any;
+  @Input() expanded = false;
 
   private asset: Array<Item> = [];
 
@@ -49,7 +49,7 @@ export class TJsonViewerComponent implements OnInit {
       value: value, // original value
       title: value, // title by default
       type: undefined,
-      isOpened: false // closed by default
+      isOpened: this.expanded
     };
 
     if (_.isString(item.value)) {

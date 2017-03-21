@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { TJsonViewerComponent } from './t-json-viewer.component/t-json-viewer.component';
+import { AgmJsonViewerComponent } from './agm-json-viewer.component/agm-json-viewer.component';
 
 @NgModule({
   imports: [
     BrowserModule
   ],
   declarations: [
-    TJsonViewerComponent
+    AgmJsonViewerComponent
   ],
   exports: [
-    TJsonViewerComponent
+    AgmJsonViewerComponent
   ]
 })
-export class TJsonViewerModule { }
+export class AgmJsonViewerModule { }

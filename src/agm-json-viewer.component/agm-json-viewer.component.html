@@ -1,4 +1,4 @@
-<div class="t-json-viewer">
+<div class="agm-json-viewer">
 
   <div
     *ngFor="let item of asset;"
@@ -25,7 +25,7 @@
       class="inner-item"
       *ngIf="isObject(item)"
       [hidden]="!item.isOpened">
-      <t-json-viewer [json]="item.value"></t-json-viewer>
+      <agm-json-viewer [json]="item.value" [expanded]="expanded"></agm-json-viewer>
     </div>
 
   </div>
