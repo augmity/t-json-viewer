@@ -70,9 +70,6 @@
   color: #999;
 }
 
-.item__type--undefined .item__key {
-  color: #999;
-}
 .item__type--undefined .item__value {
   color: #999;
 }

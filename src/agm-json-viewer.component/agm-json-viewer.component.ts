@@ -18,8 +18,14 @@ interface Item {
 export class AgmJsonViewerComponent implements OnInit {
 
   @Input() json: Array<any>|Object|any;
-  @Input() expanded = false;
-
+  @Input()
+    get expanded(): boolean {
+      return this._expanded;
+    }
+    set expanded(value: boolean) {
+      this._expanded = value;
+    }
+  private _expanded: boolean = false;
   private asset: Array<Item> = [];
 
   constructor() { }
@@ -49,7 +55,7 @@ export class AgmJsonViewerComponent implements OnInit {
       value: value, // original value
       title: value, // title by default
       type: undefined,
-      isOpened: this.expanded
+      isOpened: false
     };
 
     if (_.isString(item.value)) {
@@ -76,11 +82,13 @@ export class AgmJsonViewerComponent implements OnInit {
     else if (_.isArray(item.value)) {
       item.type = 'array';
       item.title = `Array[${item.value.length}] ${JSON.stringify(item.value)}`;
+      item.isOpened = this.expanded;
     }
 
     else if (_.isObject(item.value)) {
       item.type = 'object';
       item.title = `Object ${JSON.stringify(item.value)}`;
+      item.isOpened = this.expanded;
     }
 
     else if (item.value === null) {
