@@ -1,3 +1,8 @@
+// The code below is basically a fork of the https://github.com/temich666/t-json-viewer
+// and unfortunatelly it generates some tslint errors.
+// The easiest way to deal with them for now is to disable linting in those files :(
+
+/* tslint:disable */
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import * as _ from 'lodash';
 
