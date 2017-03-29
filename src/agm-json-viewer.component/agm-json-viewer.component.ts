@@ -30,10 +30,8 @@ export class AgmJsonViewerComponent implements OnInit {
     set expanded(value: boolean) {
       this._expanded = value;
     }
+  asset: Array<Item> = [];
   private _expanded: boolean = false;
-  private asset: Array<Item> = [];
-
-  constructor() { }
 
   ngOnInit() {
     // Do nothing without data
